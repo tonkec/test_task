@@ -1,0 +1,29 @@
+$colors: (red, yellow, blue, green);
+
+@for $i from 1 through length($colors) {
+   article:nth-of-type(#{$i}) {
+       background-color: nth($colors, $i);
+   }
+}
+
+article {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+}
+
+article:nth-of-type(-n+2) {
+	top: 0;
+}
+
+article:nth-of-type(-n+4) {
+	bottom: 0;
+}
+
+article:nth-of-type(odd) {
+	left:0;
+}
+
+article:nth-of-type(even) {
+	right:0;
+}
